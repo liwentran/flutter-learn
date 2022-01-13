@@ -16,14 +16,14 @@ class ExploreScreen extends StatelessWidget {
       // use mock service (returns future)
       // ExploreData instance will have two lists: todayRecipes and friendPosts
       future: mockService.getExploreData(),
+
       // snapshot used to check the current state of the Future
       builder: (context, AsyncSnapshot<ExploreData> snapshot) {
-        // TODO: Add Nested List Views
         if (snapshot.connectionState == ConnectionState.done) {
           return ListView(
             scrollDirection: Axis.vertical,
             children: [
-              // snapshot.data returns ExploreData, extract it
+              // snapshot.data returns ExploreData, extract data from it
               TodayRecipeListView(recipes: snapshot.data?.todayRecipes ?? []),
               const SizedBox(height: 16),
               FriendPostListView(friendPosts: snapshot.data?.friendPosts ?? []),
