@@ -13,19 +13,25 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
+      // use mock service (returns future)
       // ExploreData instance will have two lists: todayRecipes and friendPosts
       future: mockService.getExploreData(),
       // snapshot used to check the current state of the Future
       builder: (context, AsyncSnapshot<ExploreData> snapshot) {
         // TODO: Add Nested List Views
         if (snapshot.connectionState == ConnectionState.done) {
-          // snapshot.data returns ExploreData, which can be extracted
-          final recipes = snapshot.data?.todayRecipes ?? [];
-          // TODO: Replace with TodayRecipeListView
-          return Center(
-            child: Container(
-              child: const Text('Show TodayRecipeListView'),
-            ),
+          return ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              // snapshot.data returns ExploreData, extract it
+              TodayRecipeListView(recipes: snapshot.data?.todayRecipes ?? []),
+              const SizedBox(height: 16),
+              // TODO: replace this with FriendPostListView
+              Container(
+                height: 400,
+                color: Colors.green,
+              ),
+            ],
           );
         } else {
           // the future is still loading. show a spinner
