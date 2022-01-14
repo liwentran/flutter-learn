@@ -22,7 +22,9 @@ class RecipesGridView extends StatelessWidget {
         itemCount: recipes.length,
         // there will only be two columns
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 500),
+        //SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+
         itemBuilder: (context, index) {
           return RecipeThumbnail(recipe: recipes[index]);
         },
