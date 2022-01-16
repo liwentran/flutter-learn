@@ -5,4 +5,5 @@ Learning how to use flutter from Flutter Apprentice
 - 02-hello-flutter/recipe: A recipe app with adjustable serving sizes. *Using state for interactive widgets*
 - 03-basic-widgets/fooderlich: A social recipe app. *Exploring widgets for structure and navigation, displaying information, and positioning*
 - 04-understanding-widgets/fooderlich-2: Added stateful widget to reflect a favorited class. *Understanding how widgets work*
-- 05-scrollable-widgets/fooderlich-3: Added scrollable views and interactive screens. 
+- 05-scrollable-widgets/fooderlich-3: Added scrollable views, interactive screens, and interactive widgets.
+- 07-routes-and-navigation/fooderlich-4: Added the use of Navigation 2.0.
