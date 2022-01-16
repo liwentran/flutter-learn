@@ -10,7 +10,7 @@ import '../components/grocery_tile.dart';
 class GroceryItemScreen extends StatefulWidget {
   // callback that lets you know when a new item is created
   final Function(GroceryItem) onCreate;
-  // callback that reutrns the updated grocery item
+  // callback that returns the updated grocery item
   final Function(GroceryItem) onUpdate;
 
   //the grocery item that the user clicked
@@ -99,6 +99,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               );
               if (widget.isUpdating) {
                 widget.onUpdate(groceryItem);
+              } else {
                 widget.onCreate(groceryItem);
               }
             },
